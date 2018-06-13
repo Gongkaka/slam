@@ -81,7 +81,7 @@ class robot:
             dx, dy = l[0] - self.x, l[1] - self.y
             # No matter how hard we try, we cannot sense outside our measurement range.
             # (There might be false positives, but that is a different story.)
-            d = np.sqrt(dx**2 + dy**2)
+            d = sqrt(dx**2 + dy**2)
             if d > self.measurement_range and self.measurement_range != -1:
                 continue
             ## 2. account for measurement noise by *adding* a noise component to dx and dy
@@ -93,7 +93,7 @@ class robot:
             ## 3. If either of the distances, dx or dy, fall outside of the internal var, measurement_range
             ##    then we cannot record them; if they do fall in the range, then add them to the measurements list
             ##    as list.append([index, dx, dy]), this format is important for data creation done later
-            d = np.sqrt(dx**2 + dy**2)
+            d = sqrt(dx**2 + dy**2)
             if d > self.measurement_range and self.measurement_range != -1:
                 continue
             measurements.append([li, dx, dy])
